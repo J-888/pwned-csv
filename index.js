@@ -2,9 +2,29 @@ const crypto = require('crypto');
 const https = require('https');
 const bs = require('binary-search');
 const csv = require('csv-parse');
+const program = require('commander');
 
 const pwnedURL = 'https://api.pwnedpasswords.com/range/';
 const pwnedPrefixLength = 5;
+
+function setupCommander(){
+	program
+	.version('0.1.0')
+	//.option('-p, --peppers', 'Add peppers')
+	.option('--csv <csv file>', 'Read passwords from a .csv file', 'csv file')
+	.parse(process.argv);
+
+	/*console.log('you ordered a pizza with:');
+	if (program.peppers) console.log('  - peppers');
+	if (program.pineapple) console.log('  - pineapple');
+	if (program.bbqSauce) console.log('  - bbq');
+	console.log('  - %s cheese', program.cheese);*/
+	if(program.csv){
+		const csvparser = require('./csvparser');
+		csvparser.parsefile(program.csv, checkpasswords);
+	}
+
+}
 
 function checkDB(element, callback) {
 	let shaPrefix = element.sha1.substring(0, pwnedPrefixLength);
@@ -63,8 +83,7 @@ function analyzeResultObject(result, ignoreSafe) {
 		console.log('Your ' + id + ' password got pwned ' + result.pwned + ' times');
 }
 
-const csvparser = require('./csvparser');
-csvparser.parsefile('input.csv', checkpasswords);
+setupCommander();
 
 function checkpasswords(passwordlist, isSHA1) {
 	if(objectHasProperties(passwordlist[0])){
