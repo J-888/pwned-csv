@@ -1,10 +1,21 @@
-# pwned-csv
+# pwned-csv - Ensure all your passwords are safe
 
-## Usage
+## Basic usage
 
  ```bash
  node index.js --csv ./Chrome Passwords.csv
 ```
+
+## Table of contents
+
+- [Setup](#setup)
+  * [Node.js installation](#nodejs-installation)
+  * [Setup with npm](#setup-with-npm)
+- [Detailed usage](#detailed-usage)
+  * [Obtaining Chrome Passwords.csv](#obtaining-chrome-passwordscsv)
+  * [CLI Options](#cli-options)
+
+---
 
 ## Setup
 
