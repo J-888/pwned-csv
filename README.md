@@ -37,7 +37,7 @@ npm link
  
 ### Obtaining Chrome Passwords.csv
 
-Open Google Chrome password settings (`chrome://settings/passwords`), press the more options (`⋮` icon), and click on `Export passwords...`. This should down download a `Chrome Password.csv` file. Put it on the root folder of pwned-csv and run the following from a command prompt where you have Node.js
+Open Google Chrome password settings (`chrome://settings/passwords`), press the more options (`⋮` icon), and click on `Export passwords...`. This should down download a `Chrome Passwords.csv` file. Put it on the root folder of pwned-csv and run the following from a command prompt where you have Node.js
  ```bash
  node index.js --csv ./Chrome Passwords.csv
 ```
