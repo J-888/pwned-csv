@@ -11,14 +11,10 @@ function setupCommander(){
 	program
 	.version('0.1.0')
 	//.option('-p, --peppers', 'Add peppers')
-	.option('--csv <csv file>', 'Read passwords from a .csv file', 'csv file')
+	.option('--csv <csv file>', 'Read passwords from a .csv file', 'Chrome Passwords.csv')
+	.option('-s, --safe', 'Display safe passwords', false)
 	.parse(process.argv);
-
-	/*console.log('you ordered a pizza with:');
-	if (program.peppers) console.log('  - peppers');
-	if (program.pineapple) console.log('  - pineapple');
-	if (program.bbqSauce) console.log('  - bbq');
-	console.log('  - %s cheese', program.cheese);*/
+	
 	if(program.csv){
 		const csvparser = require('./csvparser');
 		csvparser.parsefile(program.csv, checkpasswords);
@@ -72,8 +68,8 @@ function makeResultObjc(site, pass, sha1, pwned) {
 	}
 }
 
-function analyzeResultObject(result, ignoreSafe) {
-	if (ignoreSafe && !result.pwned)
+function analyzeResultObject(result, showSafe) {
+	if (!showSafe && !result.pwned)
 		return;
 
 	let id = result.name !== undefined ? result.name : (result.pass === undefined ? result.sha1 : result.pass);
@@ -92,7 +88,7 @@ function checkpasswords(passwordlist, isSHA1) {
 				element.sha1 = sha1Encrypt(element.password);
 			}
 			checkDB(element, function (obj) {
-				analyzeResultObject(obj);
+				analyzeResultObject(obj, program.safe);
 			});
 		});
 	}
