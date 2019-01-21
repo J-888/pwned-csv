@@ -6,8 +6,8 @@
 
 ## Basic usage
 
- ```bash
- node index.js --csv ./Chrome Passwords.csv
+```bash
+$ node index.js --csv ./Chrome Passwords.csv
 ```
 
 ## Table of contents
@@ -33,8 +33,8 @@
 * Install the dependencies and link them:
 
  ```bash
-npm install
-npm link
+$ npm install
+$ npm link
 ```
 
 ## Detailed usage
@@ -47,7 +47,7 @@ Open Google Chrome password settings (`chrome://settings/passwords`), press the 
 ```
 Tip: if you have kept the default name, you can skip the `--csv` option:
  ```bash
- node index.js
+$ node index.js
 ```
 ### CLI Options
 
