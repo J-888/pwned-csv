@@ -2,6 +2,7 @@
 	"name": "pwned-csv",
 	"version": "0.1.0",
 	"description": "Fastest way to make sure all your passwords are safe",
+	"main" : "pwned.js",
 	"license": "MIT",
 	"repository": "J-888/pwned-csv",
 	"main": "index.js",
