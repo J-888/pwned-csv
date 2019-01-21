@@ -7,7 +7,7 @@
 ## Basic usage
 
 ```bash
-$ node index.js --csv ./Chrome Passwords.csv
+$ node pwned.js --csv ./Chrome Passwords.csv
 ```
 
 ## Table of contents
@@ -43,11 +43,11 @@ $ npm link
 
 Open Google Chrome password settings (`chrome://settings/passwords`), press more options (`⋮` icon), and click on `Export passwords...` This should down download a `Chrome Passwords.csv` file. Put it on the root folder of pwned-csv and run the following from a command prompt where you have Node.js
  ```bash
-$ node index.js --csv ./Chrome Passwords.csv
+$ node pwned.js --csv ./Chrome Passwords.csv
 ```
 Tip: if you have kept the default name, you can skip the `--csv` option:
  ```bash
-$ node index.js
+$ node pwned.js
 ```
 ### CLI Options
 
