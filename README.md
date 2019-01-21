@@ -1,6 +1,6 @@
 # pwned-csv 
 
-> Make sure all your passwords are safe
+> Fastest way to make sure all your passwords are safe
 
 <img src="https://i.imgur.com/PV8ZIJr.png" width="394">
 
