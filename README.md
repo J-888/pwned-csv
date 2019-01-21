@@ -24,7 +24,7 @@ npm link
 
 ## Detailed usage
  
-### Obtaining Chrome Password.csv
+### Obtaining Chrome Passwords.csv
 
 Open Google Chrome password settings (`chrome://settings/passwords`), press the more options (`⋮` icon), and click on `Export passwords...`. This should down download a `Chrome Password.csv` file. Put it on the root folder of pwned-csv and run the following from a command prompt where you have Node.js
  ```bash
@@ -37,18 +37,18 @@ Tip: if you have kept the default name, you can skip the `--csv` option:
 ### CLI Options
 
 <!---
-| Options  |                  | Description                     | Default value         |
-|:--------:|:---------------- | ------------------------------- | --------------------- |
-|          | --csv <csv file> | Read passwords from a .csv file | ./Chrome Password.csv |
-| -s       | --safe           | Display safe passwords          | false                 |
-| -h       | --help           | Output usage information        |                       |
-| -V       | --version        | Output the version number       |                       |
+| Options  |                  | Description                     | Default value          |
+|:--------:|:---------------- | ------------------------------- | ---------------------- |
+|          | --csv <csv file> | Read passwords from a .csv file | ./Chrome Passwords.csv |
+| -s       | --safe           | Display safe passwords          | false                  |
+| -h       | --help           | Output usage information        |                        |
+| -V       | --version        | Output the version number       |                        |
 --->
 
 <table>
 <th colspan=2>Options<th>Description<th>Default value
 <tr>
-<td colspan=2>--csv <csv file><td>Display safe passwords<td>./Chrome Password.csv
+<td colspan=2>--csv <csv file><td>Display safe passwords<td>./Chrome Passwords.csv
 <tr>
 <td>-s<td>--safe<td>Display safe passwords<td>false
 <tr>
