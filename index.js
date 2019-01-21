@@ -3,6 +3,7 @@ const https = require('https');
 const bs = require('binary-search');
 const csv = require('csv-parse');
 const program = require('commander');
+const chalk = require('chalk');
 
 const pwnedURL = 'https://api.pwnedpasswords.com/range/';
 const pwnedPrefixLength = 5;
@@ -11,7 +12,7 @@ function setupCommander(){
 	program
 	.version('0.1.0')
 	//.option('-p, --peppers', 'Add peppers')
-	.option('--csv <csv file>', 'Read passwords from a .csv file', 'Chrome Passwords.csv')
+	.option('--csv <csv file>', 'Read passwords from a .csv file', './Chrome Passwords.csv')
 	.option('-s, --safe', 'Display safe passwords', false)
 	.parse(process.argv);
 	
@@ -74,21 +75,30 @@ function analyzeResultObject(result, showSafe) {
 
 	let id = result.name !== undefined ? result.name : (result.pass === undefined ? result.sha1 : result.pass);
 	if (!result.pwned)
-		console.log('Your ' + id + ' password is safe');
+		console.log(chalk.green('Your ' + id + ' password is safe'));
 	else
-		console.log('Your ' + id + ' password got pwned ' + result.pwned + ' times');
+		console.log(chalk.red('Your ' + id + ' password got pwned ' + result.pwned + ' times'));
+}
+
+function onComplete(result, showSafe) {
+	console.log(chalk.cyan.bold('\nDont forget to delete '+program.csv));
 }
 
 setupCommander();
 
 function checkpasswords(passwordlist, isSHA1) {
 	if(objectHasProperties(passwordlist[0])){
-		passwordlist.forEach(function(element){			
+		var passProcessed = 0;
+		var passLenght = passwordlist.length;
+		passwordlist.forEach(function(element){
 			if(!element.hasOwnProperty('sha1')){
 				element.sha1 = sha1Encrypt(element.password);
 			}
 			checkDB(element, function (obj) {
-				analyzeResultObject(obj, program.safe);
+				++passProcessed;
+				analyzeResultObject(obj, program.safe, passProcessed, passLenght);
+				if (passProcessed == passLenght)
+					onComplete();
 			});
 		});
 	}
