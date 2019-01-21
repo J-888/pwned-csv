@@ -1,9 +1,13 @@
-# pwned-csv - Ensure all your passwords are safe
+# pwned-csv 
+
+> Make sure all your passwords are safe
+
+<img src="https://i.imgur.com/PV8ZIJr.png" width="394">
 
 ## Basic usage
 
- ```bash
- node index.js --csv ./Chrome Passwords.csv
+```bash
+$ node index.js --csv ./Chrome Passwords.csv
 ```
 
 ## Table of contents
@@ -29,21 +33,21 @@
 * Install the dependencies and link them:
 
  ```bash
-npm install
-npm link
+$ npm install
+$ npm link
 ```
 
 ## Detailed usage
  
 ### Obtaining Chrome Passwords.csv
 
-Open Google Chrome password settings (`chrome://settings/passwords`), press the more options (`⋮` icon), and click on `Export passwords...`. This should down download a `Chrome Passwords.csv` file. Put it on the root folder of pwned-csv and run the following from a command prompt where you have Node.js
+Open Google Chrome password settings (`chrome://settings/passwords`), press more options (`⋮` icon), and click on `Export passwords...` This should down download a `Chrome Passwords.csv` file. Put it on the root folder of pwned-csv and run the following from a command prompt where you have Node.js
  ```bash
  node index.js --csv ./Chrome Passwords.csv
 ```
 Tip: if you have kept the default name, you can skip the `--csv` option:
  ```bash
- node index.js
+$ node index.js
 ```
 ### CLI Options
 
