@@ -2,19 +2,14 @@
 	"name": "pwned-csv",
 	"version": "0.1.0",
 	"description": "Fastest way to make sure all your passwords are safe",
-	"main": "index.js",
+	"main" : "pwned.js",
 	"license": "MIT",
 	"repository": "J-888/pwned-csv",
-	"scripts": {
-		"coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
-	},
+	"main": "index.js",
 	"dependencies": {
 		"binary-search": "1.3.4",
 		"chalk": "^2.4.2",
 		"commander": "2.19.0",
 		"csv-parse": "4.3.0"
-	},
-	"devDependencies": {
-		"coveralls": "^3.0.2"
 	}
 }
