@@ -9,7 +9,6 @@ const pwnedURL = 'https://api.pwnedpasswords.com/range/';
 const pwnedPrefixLength = 5;
 
 function setupCommander(){
-	console.log(module);
 	program
 	.version('0.1.0')
 	//.option('-p, --peppers', 'Add peppers')
