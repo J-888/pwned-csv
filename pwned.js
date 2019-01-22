@@ -9,6 +9,7 @@ const pwnedURL = 'https://api.pwnedpasswords.com/range/';
 const pwnedPrefixLength = 5;
 
 function setupCommander(){
+	console.log(module);
 	program
 	.version('0.1.0')
 	//.option('-p, --peppers', 'Add peppers')
@@ -20,7 +21,6 @@ function setupCommander(){
 		const csvparser = require('./csvparser');
 		csvparser.parsefile(program.csv, checkpasswords);
 	}
-
 }
 
 function checkDB(element, callback) {
@@ -84,7 +84,8 @@ function onComplete(result, showSafe) {
 	console.log(chalk.cyan.bold('\nDont forget to delete '+program.csv));
 }
 
-setupCommander();
+if(!module.parent)	//is CLI
+	setupCommander();
 
 function checkpasswords(passwordlist, isSHA1) {
 	if(objectHasProperties(passwordlist[0])){
