@@ -1,4 +1,6 @@
 # pwned-csv 
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FJ-888%2Fpwned-csv.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FJ-888%2Fpwned-csv?ref=badge_shield)
+
 
 > Fastest way to make sure all your passwords are safe
 
@@ -71,3 +73,7 @@ $ node pwned.js
 <tr>
 <td>-V<td>--version<td>Output the version number<td>
 </table>
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FJ-888%2Fpwned-csv.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FJ-888%2Fpwned-csv?ref=badge_large)
