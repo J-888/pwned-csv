@@ -3,6 +3,19 @@
 > Fastest way to make sure all your passwords are safe
 
 [![Build Status](https://travis-ci.org/J-888/pwned-csv.svg?branch=master)](https://travis-ci.org/J-888/pwned-csv)
+[![Coverage](https://img.shields.io/codecov/c/github/J-888/pwned-csv.svg?style=flat)](https://codecov.io/gh/J-888/pwned-csv)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE.txt)
+<!--[![License](https://img.shields.io/github/license/J-888/pwned-csv.svg?style=flat)](LICENSE.txt)-->
+
+[![Build Status](https://img.shields.io/travis/J-888/pwned-csv.svg?style=flat-square)](https://travis-ci.org/J-888/pwned-csv)
+[![Coverage](https://img.shields.io/codecov/c/github/J-888/pwned-csv.svg?style=flat-square)](https://codecov.io/gh/J-888/pwned-csv)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.txt)
+<!--[![License](https://img.shields.io/github/license/J-888/pwned-csv.svg?style=flat-square)](LICENSE.txt)-->
+
+[![Build Status](https://img.shields.io/travis/J-888/pwned-csv.svg?style=for-the-badge)](https://travis-ci.org/J-888/pwned-csv)
+[![Coverage](https://img.shields.io/codecov/c/github/J-888/pwned-csv.svg?style=for-the-badge)](https://codecov.io/gh/J-888/pwned-csv)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE.txt)
+<!--[![License](https://img.shields.io/github/license/J-888/pwned-csv.svg?style=for-the-badge)](LICENSE.txt)-->
 
 <img src="https://i.imgur.com/PV8ZIJr.png" width="394">
 
