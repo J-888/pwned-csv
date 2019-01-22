@@ -6,6 +6,9 @@
 	"license": "MIT",
 	"repository": "J-888/pwned-csv",
 	"main": "index.js",
+	"scripts": {
+		"test": "true"
+	},
 	"dependencies": {
 		"binary-search": "1.3.4",
 		"chalk": "^2.4.2",
