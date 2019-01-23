@@ -67,10 +67,21 @@ describe(csvparser.path, function() {
 		});
 
 		it('Test file (no callback)', function() {
+			try {
+				csvparser.module.parsefile('test assets/test.csv');
+			} catch (e) {
+				console.log(e);
+			}
+
 			assert.doesNotThrow(() => {csvparser.module.parsefile('test assets/test.csv')});
 		});
 
 		it('Test file (callback)', function() {
+			try {
+				csvparser.module.parsefile('test assets/test.csv', () => {});
+			} catch (e) {
+				console.log(e);
+			}
 			assert.doesNotThrow(() => {csvparser.module.parsefile('test assets/test.csv'), () => {}});
 		});
 	});
