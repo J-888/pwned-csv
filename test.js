@@ -64,6 +64,44 @@ describe(pwned.path, function() {
 			}])});
 		});
 	});
+	describe('#checkpasswords(passwordlist, isSHA1)', function() {
+		testDefinedFunction(pwned.module, 'checkpasswords');
+		it('Undefined', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords(undefined)});
+		});
+		it('null', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords(null)});
+		});
+		it('empty list', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords([])});
+		});
+		it('Element with no properties', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords([{}])});
+		});
+		it('Element with sha', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords([{
+				sha1: '39DFA55283318D31AFE5A3FF4A0E3253E2045E43'
+			}])});
+		});
+		it('Element without sha', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords(
+				[{
+					password: '1234'
+				},{
+					password: makeSafePass()
+				}])
+			});
+		});
+		it('Element without sha & show safe', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords(
+				[{
+					password: '1234'
+				},{
+					password: makeSafePass()
+				}])
+			});
+		});
+	});
 });
 
 describe(csvparser.path, function() {
@@ -130,4 +168,8 @@ function testDefinedFunction(module, fn){
 	return it('Defined function', function() {
 		assert.notEqual(typeof module[fn] === 'function');
 	});
+}
+
+function makeSafePass(){
+	return '$!%"/$"/("·'.repeat(20);
 }
