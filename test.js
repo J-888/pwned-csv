@@ -109,14 +109,14 @@ describe(pwned.path, function() {
 			});
 		});
 	});
-	describe('#setupCommander()', function() {
+	/*describe('#setupCommander()', function() {
 		testDefinedFunction(pwned.module, 'setupCommander');
 		it('run', function() {
 			assert.throws(()=>{pwned.module.setupCommander()}, {
 				code: 'ENOENT'
 			});
 		});
-	});
+	});*/
 });
 
 describe(csvparser.path, function() {
