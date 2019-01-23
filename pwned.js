@@ -87,6 +87,10 @@ if(!module.parent)	//is CLI
 	setupCommander();
 
 function checkpasswords(passwordlist, isSHA1) {
+
+	if(!passwordlist || passwordlist.length<=0)
+		return;
+
 	if(objectHasProperties(passwordlist[0])){
 		var passProcessed = 0;
 		var passLenght = passwordlist.length;
@@ -119,6 +123,7 @@ function objectHasProperties(object) {
 
 var exports = module.exports = {};
 if(true){
-	exports.sha1Encrypt = sha1Encrypt;
+	exports.checkpasswords = checkpasswords;
 	exports.objectHasProperties = objectHasProperties;
+	exports.sha1Encrypt = sha1Encrypt;
 }

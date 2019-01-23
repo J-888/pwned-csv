@@ -23,7 +23,7 @@ describe(pwned.path, function() {
 				assert.equal(pwned.module.sha1Encrypt(sha1Test[i][0]), sha1Test[i][1]);
 			}
 		});
-	});	
+	});
 	describe('#objectHasProperties(object)', function() {
 		testDefinedFunction(pwned.module, 'objectHasProperties');
 		it('Undefined', function() {
@@ -37,6 +37,31 @@ describe(pwned.path, function() {
 		});
 		it('With properties', function() {
 			assert.equal(pwned.module.objectHasProperties({test: true}), true);
+		});
+	});
+	describe('#checkpasswords(passwordlist, isSHA1)', function() {
+		testDefinedFunction(pwned.module, 'checkpasswords');
+		it('Undefined', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords(undefined)});
+		});
+		it('null', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords(null)});
+		});
+		it('empty list', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords([])});
+		});
+		it('Element with no properties', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords([{}])});
+		});
+		it('Element with sha', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords([{
+				sha1: '39DFA55283318D31AFE5A3FF4A0E3253E2045E43'
+			}])});
+		});
+		it('Element without sha', function() {
+			assert.doesNotThrow(()=>{pwned.module.checkpasswords([{
+				password: '1234'
+			}])});
 		});
 	});
 });
