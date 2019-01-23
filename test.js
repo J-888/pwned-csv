@@ -31,6 +31,36 @@ describe(csvparser.path, function() {
 	csvparser.module = require(csvparser.path);
 	describe('#parsefile(file)', function() {
 		testDefinedFunction(csvparser.module, 'parsefile');
+		it('Inexistent file', function() {
+			/*try {
+				csvparser.module.parsefile('Inexistent file');
+			} catch (e) {
+				console.log(e);
+			}*/
+			assert.throws(function() {
+				csvparser.module.parsefile('Inexistent file');
+			}, {code: 'ENOENT'});
+		});
+		it('Undefined file', function() {
+			/*try {
+				csvparser.module.parsefile('Inexistent file');
+			} catch (e) {
+				console.log(e);
+			}*/
+			assert.throws(function() {
+				csvparser.module.parsefile(undefined);
+			}, {code: 'ERR_INVALID_ARG_TYPE'});
+		});
+		it('null file', function() {
+			/*try {
+				csvparser.module.parsefile('Inexistent file');
+			} catch (e) {
+				console.log(e);
+			}*/
+			assert.throws(function() {
+				csvparser.module.parsefile(null);
+			}, {code: 'ERR_INVALID_ARG_TYPE'});
+		});
 	});
 });
 
