@@ -81,7 +81,7 @@ function analyzeResultObject(result, showSafe) {
 		console.log(chalk.red('Your ' + id + ' password got pwned ' + result.pwned + ' times'));
 }
 
-function onComplete(result, showSafe) {
+function onComplete() {
 	console.log(chalk.cyan.bold('\nDont forget to delete '+program.csv));
 }
 
@@ -89,10 +89,13 @@ function onComplete(result, showSafe) {
 if(!module.parent)	//is CLI
 	setupCommander();
 
-function checkpasswords(passwordlist, isSHA1) {
+function checkpasswords(passwordlist, isSHA1, showSafe) {
 
 	if(!passwordlist || passwordlist.length<=0)
 		return;
+
+	if(showSafe !== undefined) //override arg
+		program.safe = showSafe;
 
 	if(objectHasProperties(passwordlist[0])){
 		var passProcessed = 0;
