@@ -5,9 +5,9 @@ var csvparser = { path: './csvparser' };
 
 describe(pwned.path, function() {
 	testDefinedModule(pwned);
+	pwned.module = require(pwned.path);
 	describe('#sha1Encrypt(password)', function() {
-		testDefinedModule(pwned);
-		pwned.module = require(pwned.path);
+		testDefinedFunction(pwned.module, 'sha1Encrypt');
 		it('Basic testbench', function() {
 			sha1Test = [
 				['0000', '39DFA55283318D31AFE5A3FF4A0E3253E2045E43'],
@@ -54,6 +54,7 @@ describe(csvparser.path, function() {
 				csvparser.module.parsefile(undefined);
 			}/*, {code: 'ERR_INVALID_ARG_TYPE'}*/);
 		});
+
 		it('null file', function() {
 			/*try {
 				csvparser.module.parsefile('Inexistent file');
@@ -63,6 +64,14 @@ describe(csvparser.path, function() {
 			assert.throws(function() {
 				csvparser.module.parsefile(null);
 			}/*, {code: 'ERR_INVALID_ARG_TYPE'}*/);
+		});
+
+		it('Test file (no callback)', function() {
+			assert.doesNotThrow(() => {csvparser.module.parsefile('test assets/test.csv')});
+		});
+
+		it('Test file (callback)', function() {
+			assert.doesNotThrow(() => {csvparser.module.parsefile('test assets/test.csv'), () => {}});
 		});
 	});
 });
