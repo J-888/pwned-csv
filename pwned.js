@@ -26,6 +26,7 @@ function checkDB(element, callback) {
 	let shaPrefix = element.sha1.substring(0, pwnedPrefixLength);
 	let shaRest = element.sha1.substring(pwnedPrefixLength);
 	https.get(pwnedURL + shaPrefix, (res) => {
+		/* istanbul ignore if (its never met)*/
 		if (res.statusCode !== 200)
 			throw new Error('Status code: ' + res.statusCode);
 
@@ -41,7 +42,8 @@ function checkDB(element, callback) {
 			callback(element);
 		});
 
-	}).on('error', (e) => {
+	}).on('error', (e) => {		
+		/* istanbul ignore next (error throw)*/
 		console.error(e);
 	});
 }
@@ -83,6 +85,7 @@ function onComplete(result, showSafe) {
 	console.log(chalk.cyan.bold('\nDont forget to delete '+program.csv));
 }
 
+/* istanbul ignore if (CLI only)*/
 if(!module.parent)	//is CLI
 	setupCommander();
 
