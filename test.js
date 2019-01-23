@@ -9,19 +9,19 @@ describe(pwned.path, function() {
 		testDefinedModule(pwned);
 		pwned.module = require(pwned.path);
 		it('Basic testbench', function() {
-			/*sha1Test = [
-				['0000', '39dfa55283318d31afe5a3ff4a0e3253e2045e43'],
-				['1234', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'],
-				['4321', 'd5f12e53a182c062b6bf30c1445153faff12269a'],
-				['abcd', '81fe8bfe87576c3ecb22426f8e57847382917acf'],
-				['ABCD', 'fb2f85c88567f3c8ce9b799c7c54642d0c7b41f6'],
-				['@#!@#!', 'c4d4d5c6644c98518343d7f62fd6e42515f59f0b'],
-				['#!@#!@', '05ec3c1d85d89892067ac510cc3c06be9b879c9b'],
+			sha1Test = [
+				['0000', '39DFA55283318D31AFE5A3FF4A0E3253E2045E43'],
+				['1234', '7110EDA4D09E062AA5E4A390B0A572AC0D2C0220'],
+				['4321', 'D5F12E53A182C062B6BF30C1445153FAFF12269A'],
+				['abcd', '81FE8BFE87576C3ECB22426F8E57847382917ACF'],
+				['ABCD', 'FB2F85C88567F3C8CE9B799C7C54642D0C7B41F6'],
+				['@#!@#!', 'C4D4D5C6644C98518343D7F62FD6E42515F59F0B'],
+				['#!@#!@', '05EC3C1D85D89892067AC510CC3C06BE9B879C9B'],
 			];
 
 			for(let i=0;i<sha1Test.length;++i){
-				assert.equal(pwned.sha1Encrypt(sha1Test[i][0]), sha1Test[i][1]);
-			}*/
+				assert.equal(pwned.module.sha1Encrypt(sha1Test[i][0]), sha1Test[i][1]);
+			}
 		});
 	});
 });
