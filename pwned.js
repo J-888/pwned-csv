@@ -62,14 +62,15 @@ function searchInResults(results, shaRest) {
 	return resList[pos];
 }
 
-function makeResultObjc(site, pass, sha1, pwned) {
+//	Not being used for now
+/*function makeResultObjc(site, pass, sha1, pwned) {
 	return {
 		site: null,
 		pass: null,
 		sha1: sha1,
 		pwned: pwned === undefined ? false : pwned.substring(sha1.length + 1 - pwnedPrefixLength)
 	}
-}
+}*/
 
 function analyzeResultObject(result, showSafe) {
 	if (!showSafe && !result.pwned)
@@ -130,6 +131,7 @@ function objectHasProperties(object) {
 
 var exports = module.exports = {};
 if(true){
+	exports.setupCommander = setupCommander;
 	exports.checkpasswords = checkpasswords;
 	exports.objectHasProperties = objectHasProperties;
 	exports.sha1Encrypt = sha1Encrypt;

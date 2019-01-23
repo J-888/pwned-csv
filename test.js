@@ -1,3 +1,10 @@
+/**********************************************
+RUN WITH:
+mocha
+npm test
+istanbul cover ./node_modules/mocha/bin/_mocha
+**********************************************/
+
 const assert = require('assert');
 
 var pwned = { path: './pwned' };
@@ -89,7 +96,7 @@ describe(pwned.path, function() {
 					password: '1234'
 				},{
 					password: makeSafePass()
-				}])
+				}], undefined, false)
 			});
 		});
 		it('Element without sha & show safe', function() {
@@ -99,6 +106,14 @@ describe(pwned.path, function() {
 				},{
 					password: makeSafePass()
 				}], undefined, true)
+			});
+		});
+	});
+	describe('#setupCommander()', function() {
+		testDefinedFunction(pwned.module, 'setupCommander');
+		it('run', function() {
+			assert.throws(()=>{pwned.module.setupCommander()}, {
+				code: 'ENOENT'
 			});
 		});
 	});
