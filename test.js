@@ -71,7 +71,7 @@ describe(csvparser.path, function() {
 		});
 
 		it('Test file (callback)', function() {
-			assert.doesNotThrow(() => {csvparser.module.parsefile('test assets/test.csv'), () => {}});
+			assert.doesNotThrow(() => {csvparser.module.parsefile('test assets/test.csv', ()=>{})});
 		});
 	});
 });

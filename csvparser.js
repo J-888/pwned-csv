@@ -19,7 +19,7 @@ exports.parsefile = function(file, callback) {
 			output[i] = newOutput;
 		}
 		output.shift();
-		
+
 		if(callback)
 			callback(output);
 	});
