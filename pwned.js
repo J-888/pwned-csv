@@ -8,6 +8,7 @@ const chalk = require('chalk');
 const pwnedURL = 'https://api.pwnedpasswords.com/range/';
 const pwnedPrefixLength = 5;
 
+/* istanbul ignore next (CLI only)*/
 function setupCommander(){
 	program
 	.version('0.1.0')
@@ -16,7 +17,6 @@ function setupCommander(){
 	.option('-s, --safe', 'Display safe passwords', false)
 	.parse(process.argv);
 	
-	/* istanbul ignore if (CLI only)*/
 	if(program.csv){
 		const csvparser = require('./csvparser');
 		csvparser.parsefile(program.csv, checkpasswords);
