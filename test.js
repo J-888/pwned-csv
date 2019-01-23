@@ -43,7 +43,7 @@ describe(csvparser.path, function() {
 				code: 'ENOENT'
 			});
 		});
-		var noFileRegex = /ENOENT|ERR_INVALID_ARG_TYPE/;
+
 		it('Undefined file', function() {
 			/*try {
 				csvparser.module.parsefile('Inexistent file');
@@ -52,10 +52,7 @@ describe(csvparser.path, function() {
 			}*/
 			assert.throws(function() {
 				csvparser.module.parsefile(undefined);
-			}, {
-				//code: 'ERR_INVALID_ARG_TYPE'
-				code: noFileRegex
-			});
+			}/*, {code: 'ERR_INVALID_ARG_TYPE'}*/);
 		});
 		it('null file', function() {
 			/*try {
@@ -65,10 +62,7 @@ describe(csvparser.path, function() {
 			}*/
 			assert.throws(function() {
 				csvparser.module.parsefile(null);
-			}, {
-				//code: 'ERR_INVALID_ARG_TYPE'
-				code: noFileRegex
-			});
+			}/*, {code: 'ERR_INVALID_ARG_TYPE'}*/);
 		});
 	});
 });
