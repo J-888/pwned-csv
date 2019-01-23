@@ -39,27 +39,36 @@ describe(csvparser.path, function() {
 			}*/
 			assert.throws(function() {
 				csvparser.module.parsefile('Inexistent file');
-			}, {code: 'ENOENT'});
+			}, {
+				code: 'ENOENT'
+			});
 		});
+		var noFileRegex = /ENOENT|ERR_INVALID_ARG_TYPE/;
 		it('Undefined file', function() {
-			try {
+			/*try {
 				csvparser.module.parsefile('Inexistent file');
 			} catch (e) {
 				console.log(e);
-			}
-			/*assert.throws(function() {
+			}*/
+			assert.throws(function() {
 				csvparser.module.parsefile(undefined);
-			}, {code: 'ERR_INVALID_ARG_TYPE'});*/
+			}, {
+				//code: 'ERR_INVALID_ARG_TYPE'
+				code: noFileRegex
+			});
 		});
 		it('null file', function() {
-			try {
+			/*try {
 				csvparser.module.parsefile('Inexistent file');
 			} catch (e) {
 				console.log(e);
-			}
-			/*assert.throws(function() {
+			}*/
+			assert.throws(function() {
 				csvparser.module.parsefile(null);
-			}, {code: 'ERR_INVALID_ARG_TYPE'});*/
+			}, {
+				//code: 'ERR_INVALID_ARG_TYPE'
+				code: noFileRegex
+			});
 		});
 	});
 });
