@@ -6,7 +6,7 @@ var csvparser = { path: './csvparser' };
 describe(pwned.path, function() {
 	testDefinedModule(pwned);
 	pwned.module = require(pwned.path);
-	/*describe('#sha1Encrypt(password)', function() {
+	describe('#sha1Encrypt(password)', function() {
 		testDefinedFunction(pwned.module, 'sha1Encrypt');
 		it('Basic testbench', function() {
 			sha1Test = [
@@ -63,9 +63,9 @@ describe(pwned.path, function() {
 				password: '1234'
 			}])});
 		});
-	});*/
+	});
 	describe('#checkpasswords(passwordlist, isSHA1, showSafe)', function() {
-		/*testDefinedFunction(pwned.module, 'checkpasswords');
+		testDefinedFunction(pwned.module, 'checkpasswords');
 		it('Undefined', function() {
 			assert.doesNotThrow(()=>{pwned.module.checkpasswords(undefined)});
 		});
@@ -82,7 +82,7 @@ describe(pwned.path, function() {
 			assert.doesNotThrow(()=>{pwned.module.checkpasswords([{
 				sha1: '39DFA55283318D31AFE5A3FF4A0E3253E2045E43'
 			}])});
-		});*/
+		});
 		it('Element without sha', function() {
 			assert.doesNotThrow(()=>{pwned.module.checkpasswords(
 				[{

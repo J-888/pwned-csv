@@ -16,6 +16,7 @@ function setupCommander(){
 	.option('-s, --safe', 'Display safe passwords', false)
 	.parse(process.argv);
 	
+	/* istanbul ignore if (CLI only)*/
 	if(program.csv){
 		const csvparser = require('./csvparser');
 		csvparser.parsefile(program.csv, checkpasswords);
