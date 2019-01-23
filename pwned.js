@@ -120,4 +120,5 @@ function objectHasProperties(object) {
 var exports = module.exports = {};
 if(true){
 	exports.sha1Encrypt = sha1Encrypt;
+	exports.objectHasProperties = objectHasProperties;
 }

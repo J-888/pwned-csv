@@ -23,6 +23,21 @@ describe(pwned.path, function() {
 				assert.equal(pwned.module.sha1Encrypt(sha1Test[i][0]), sha1Test[i][1]);
 			}
 		});
+	});	
+	describe('#objectHasProperties(object)', function() {
+		testDefinedFunction(pwned.module, 'objectHasProperties');
+		it('Undefined', function() {
+			assert.equal(pwned.module.objectHasProperties(undefined), false);
+		});
+		it('null', function() {
+			assert.equal(pwned.module.objectHasProperties(null), false);
+		});
+		it('With no properties', function() {
+			assert.equal(pwned.module.objectHasProperties({}), false);
+		});
+		it('With properties', function() {
+			assert.equal(pwned.module.objectHasProperties({test: true}), true);
+		});
 	});
 });
 
@@ -79,7 +94,7 @@ describe(csvparser.path, function() {
 /* AUX FUNCTIONS */
 
 function testDefinedModule(moduleObj){	
-	it('defined module', function() {
+	it('Defined module', function() {
 		assert.doesNotThrow(function(){
 			require(moduleObj.path);
 		});
@@ -87,7 +102,7 @@ function testDefinedModule(moduleObj){
 }
 
 function testDefinedFunction(module, fn){
-	return it('defined function', function() {
+	return it('Defined function', function() {
 		assert.notEqual(typeof module[fn] === 'function');
 	});
 }
