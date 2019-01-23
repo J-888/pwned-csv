@@ -95,8 +95,8 @@ function checkpasswords(passwordlist, isSHA1, showSafe) {
 	if(!passwordlist || passwordlist.length<=0)
 		return;
 
-	if(showSafe !== undefined) //override arg
-		program.safe = showSafe;
+	if(showSafe == undefined) //override arg
+		var showSafe = program.safe;
 
 	if(objectHasProperties(passwordlist[0])){
 		var passProcessed = 0;
@@ -107,7 +107,7 @@ function checkpasswords(passwordlist, isSHA1, showSafe) {
 			}
 			checkDB(element, function (obj) {
 				++passProcessed;
-				analyzeResultObject(obj, program.safe, passProcessed, passLenght);
+				analyzeResultObject(obj, showSafe);
 				if (passProcessed == passLenght)
 					onComplete();
 			});
