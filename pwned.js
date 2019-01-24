@@ -85,11 +85,23 @@ function analyzeResultObject(result, showSafe) {
 
 function onComplete() {
 	console.log(chalk.cyan.bold('\nDont forget to delete '+program.csv));
+
+	/* istanbul ignore if (CLI only)*/
+	if(program.freeze){
+		console.log('Press any key to exit');
+
+		process.stdin.setRawMode(true);
+		process.stdin.resume();
+		process.stdin.on('data', process.exit.bind(process, 0));
+	}
 }
 
 /* istanbul ignore if (CLI only)*/
-if(!module.parent)	//is CLI
+if(!module.parent) {	//is CLI
+	if(process.argv.length == 2)	//no arg
+		program.freeze = true;
 	setupCommander();
+}
 
 function checkpasswords(passwordlist, isSHA1, showSafe) {
 
