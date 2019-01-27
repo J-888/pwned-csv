@@ -11,7 +11,7 @@ const pwnedPrefixLength = 5;
 /* istanbul ignore next (CLI only)*/
 function setupCommander(){
 	program
-	.version('1.0.0')
+	.version('1.1.0')
 	//.option('-p, --peppers', 'Add peppers')
 	.option('--csv <csv file>', 'Read passwords from a .csv file', './Chrome Passwords.csv')
 	.option('-s, --safe', 'Display safe passwords', false)

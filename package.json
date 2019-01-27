@@ -1,6 +1,6 @@
 {
 	"name": "pwned-csv",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Fastest way to make sure all your passwords are safe",
 	"main": "index.js",
 	"license": "MIT",
@@ -35,6 +35,8 @@
 		"hack",
 		"dump",
 		"breach",
-		"pastes"
+		"pastes",
+		"list",
+		"check"
 	]
 }
