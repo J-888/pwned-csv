@@ -4,8 +4,9 @@
 
 [![Build Status](https://img.shields.io/travis/J-888/pwned-csv.svg?style=flat-square)](https://travis-ci.org/J-888/pwned-csv)
 [![Coverage](https://img.shields.io/codecov/c/github/J-888/pwned-csv.svg?style=flat-square)](https://codecov.io/gh/J-888/pwned-csv)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.txt)
-<!--[![License](https://img.shields.io/github/license/J-888/pwned-csv.svg?style=flat-square)](LICENSE.txt)-->
+[![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/pwned-csv.svg?style=flat-square)](https://snyk.io/test/github/J-888/pwned-csv)
+[![npm](https://img.shields.io/npm/v/pwned-csv.svg?style=flat-square)](https://www.npmjs.com/package/pwned-csv)
+[![License](https://img.shields.io/npm/l/pwned-csv.svg?style=flat-square&colorB=blue)](LICENSE.txt)
 
 <img src="https://i.imgur.com/PV8ZIJr.png" width="394">
 
